@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+  <meta charset="UTF-8">
+  <title>Ayurveda Wellness</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/mhah-panchang@1.2.0/dist/mhah-panchang.umd.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>🌿 Ayurveda Wellness</h1>
+  <nav>
+    <a href="#intro">Home</a>
+    <a href="#quiz">Dosha Quiz</a>
+    <a href="#remedies">Remedies</a>
+    <a href="#diet">Diet</a>
+    <a href="#tips">Daily Tip</a>
+  </nav>
+</header>
+
+<section id="intro" class="section">
+  <h2>🧘 What is Ayurveda?</h2>
+  <p>Ayurveda is a 5,000-year-old system of natural healing that emphasizes balance in bodily systems using diet, lifestyle, and herbal remedies. Key to Ayurveda are the three Doshas: Vata, Pitta, and Kapha.</p>
+</section>
+
+<section id="quiz" class="section">
+  <h2>📋 Dosha Quiz</h2>
+  <form id="quiz-form">
+    <div class="question">
+      <p>What is your body type?</p>
+      <label><input type="radio" name="body" value="Vata"> Slim</label>
+      <label><input type="radio" name="body" value="Pitta"> Medium</label>
+      <label><input type="radio" name="body" value="Kapha"> Broad</label>
+    </div>
+    <div class="question">
+      <p>How is your digestion?</p>
+      <label><input type="radio" name="digestion" value="Vata"> Irregular</label>
+      <label><input type="radio" name="digestion" value="Pitta"> Strong</label>
+      <label><input type="radio" name="digestion" value="Kapha"> Slow</label>
+    </div>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+  <div id="quiz-result" class="result-box"></div>
+</section>
+
+<section id="remedies" class="section">
+  <h2>🧴 Ayurvedic Remedies</h2>
+  <div class="remedy-card">
+    <h4>😴 Insomnia</h4>
+    <p>Warm milk with turmeric, sesame oil massage, Brahmi tea before bed.</p>
+  </div>
+  <div class="remedy-card">
+    <h4>🔥 Acidity</h4>
+    <p>Coriander tea, coconut water, avoid fried and spicy foods.</p>
+  </div>
+  <div class="remedy-card">
+    <h4>🤧 Cold & Cough</h4>
+    <p>Ginger-tulsi tea, steam with eucalyptus oil, black pepper honey mix.</p>
+  </div>
+</section>
+
+<section id="diet" class="section">
+  <h2>🥗 Diet Suggestions</h2>
+  <label for="dosha">Choose your Dosha:</label>
+  <select id="dosha">
+    <option value="">-- Select Dosha --</option>
+    <option value="Vata">Vata</option>
+    <option value="Pitta">Pitta</option>
+    <option value="Kapha">Kapha</option>
+  </select>
+  <div id="diet-output" class="result-box"></div>
+</section>
+<section id="prakriti" class="section">
+  <h2>🧬 Prakriti Analysis</h2>
+  <form id="prakriti-form">
+    <div class="question">
+      <p>🧍 Body Frame</p>
+      <label><input type="radio" name="frame" value="Vata"> Slim and light</label>
+      <label><input type="radio" name="frame" value="Pitta"> Medium and muscular</label>
+      <label><input type="radio" name="frame" value="Kapha"> Broad and heavy</label>
+    </div>
+
+    <div class="question">
+      <p>🔥 Appetite</p>
+      <label><input type="radio" name="appetite" value="Vata"> Irregular</label>
+      <label><input type="radio" name="appetite" value="Pitta"> Strong and sharp</label>
+      <label><input type="radio" name="appetite" value="Kapha"> Slow</label>
+    </div>
+
+    <div class="question">
+      <p>🧠 Mind</p>
+      <label><input type="radio" name="mind" value="Vata"> Creative, anxious</label>
+      <label><input type="radio" name="mind" value="Pitta"> Focused, sharp</label>
+      <label><input type="radio" name="mind" value="Kapha"> Calm, steady</label>
+    </div>
+
+    <div class="question">
+      <p>😴 Sleep Pattern</p>
+      <label><input type="radio" name="sleep" value="Vata"> Light, disturbed</label>
+      <label><input type="radio" name="sleep" value="Pitta"> Moderate, sometimes disturbed</label>
+      <label><input type="radio" name="sleep" value="Kapha"> Deep and long</label>
+    </div>
+
+    <div class="question">
+      <p>🌡️ Temperature Preference</p>
+      <label><input type="radio" name="temp" value="Vata"> Prefers warmth</label>
+      <label><input type="radio" name="temp" value="Pitta"> Prefers coolness</label>
+      <label><input type="radio" name="temp" value="Kapha"> Dislikes cold and damp</label>
+    </div>
+
+    <button type="submit" class="btn">Analyze Prakriti</button>
+  </form>
+
+  <div id="prakriti-result" class="result-box"></div>
+</section>
+<section id="dinacharya" class="section">
+  <h2>🕉️ Dinacharya (Daily Routine Generator)</h2>
+  <label for="dosha-routine">Select your Dosha:</label>
+  <select id="dosha-routine">
+    <option value="">-- Choose Dosha --</option>
+    <option value="Vata">Vata</option>
+    <option value="Pitta">Pitta</option>
+    <option value="Kapha">Kapha</option>
+  </select>
+  <div id="routine-output" class="result-box"></div>
+</section>
+<section id="ritucharya" class="section">
+  <h2>🪔 Seasonal Ritucharya Guide</h2>
+  <label for="season">Choose current Indian season:</label>
+  <select id="season">
+    <option value="">-- Auto-detect --</option>
+    <option value="Vasanta">Vasanta (Spring - Mar/Apr)</option>
+    <option value="Grishma">Grishma (Summer - May/Jun)</option>
+    <option value="Varsha">Varsha (Monsoon - Jul/Aug)</option>
+    <option value="Sharad">Sharad (Autumn - Sep/Oct)</option>
+    <option value="Hemanta">Hemanta (Pre-Winter - Nov/Dec)</option>
+    <option value="Shishira">Shishira (Winter - Jan/Feb)</option>
+  </select>
+
+  <button class="btn" onclick="showRitucharya()">Show Recommendations</button>
+  <div id="ritu-result" class="result-box"></div>
+</section>
+<section id="herbal-finder" class="section">
+  <h2>🧪 Herbal Finder Tool</h2>
+  <label for="issue-select">Select a health issue:</label>
+  <select id="issue-select">
+    <option value="">-- Choose an Issue --</option>
+    <option value="stress">Stress & Anxiety</option>
+    <option value="digestion">Poor Digestion / Gas</option>
+    <option value="sleep">Insomnia</option>
+    <option value="joint">Joint Pain</option>
+    <option value="skin">Skin Issues</option>
+    <option value="immunity">Low Immunity</option>
+  </select>
+
+  <div id="herbal-result" class="result-box"></div>
+</section>
+<section id="remedy-checker" class="section">
+  <h2>🌿 Home Remedies Recommender</h2>
+  <label for="symptom-select">Choose a symptom:</label>
+  <select id="symptom-select">
+    <option value="">-- Select Symptom --</option>
+    <option value="cold">Cold & Congestion</option>
+    <option value="headache">Headache</option>
+    <option value="acidity">Acidity</option>
+    <option value="constipation">Constipation</option>
+    <option value="cough">Cough</option>
+    <option value="fatigue">Fatigue</option>
+  </select>
+
+  <div id="remedy-result" class="result-box"></div>
+</section>
+<section id="downloads" class="section">
+  <h2>📥 Ayurveda PDF Downloads</h2>
+  <ul class="download-list">
+    <li>
+      <a href="downloads/Ayurveda Ayurveda An Ancient System of Holistic Health to Bring Balance and Wellness to Your Life (Sonja Shah-Williams) (Z-Library) (1).pdf" target="_blank">📄 Little book of self care</a>
+    </li>
+    <li>
+      <a href="downloads/Practical Ayurveda Find Out Who You Are and What You Need to Bring Balance to Your Life (Sivananda Yoga Vedanta Centre) (Z-Library).pdf" target="_blank">📄 Practical Ayurveda</a>
+    </li>
+    <li>
+      <a href="downloads/The Ayurveda encyclopedia natural secrets to healing, prevention  longevity (Swami Sada Shiva Tirtha) (Z-Library).pdf" target="_blank">📄 ayurveda encyclopedia</a>
+    </li>
+    <li>
+        <a href="downloads/Ayurveda (Ketabi, Sahara Rose) (Z-Library).pdf" target="_blank">📄 Ayurveda</a>
+    </li>
+    <li>
+        <a href="downloads/Ayurveda Beginner’s Guide Essential Ayurvedic Principles and Practices to Balance and Heal Naturally (Susan Weis-Bohlen) (Z-Library).pdf" target="_blank">📄 Ayurveda Beginner’s Guide</a>
+    </li>
+    <li>
+        <a href="downloads/🌿 Aloe Vera.pdf"target="_blank">📄 Benifits of aloe vera</a>
+    </li>
+    <li>
+        <a href="downloads/Anulom Vilom Pranayama.pdf"target="_blank">📄 Benifits of Anulom vilom</a>
+    </li>
+    <li>
+        <a href="downloads/🧴 NATURAL AYURVEDIC BEAUTY RECIPES.pdf"target="_blank">📄 Natural ayurvedic beauty recipes</a>
+    </li>
+  </ul>
+</section>
+
+
+<style>
+  #recipe-filters {
+    margin: 15px 0;
+  }
+  #recipe-filters button {
+    margin: 5px;
+    padding: 8px 12px;
+    background-color: #f4e4d4;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #recipe-filters button:hover {
+    background-color: #e6d1b3;
+  }
+  .recipe-box {
+    background: #fff8f0;
+    border-left: 6px solid #c9885b;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .recipe-box h3 {
+    margin-top: 0;
+    color: #8b4513;
+  }
+  .recipe-box ul {
+    padding-left: 20px;
+  }
+</style>
+
+<script>
+  function filterRecipes(category) {
+    const allBoxes = document.querySelectorAll('.recipe-box');
+    allBoxes.forEach(box => {
+      if (category === 'all') {
+        box.style.display = 'block';
+      } else {
+        box.style.display = box.classList.contains(category) ? 'block' : 'none';
+      }
+    });
+  }
+</script>
+<section id="learn-ayurveda" class="section">
+  <h2>🎓 Learn Ayurveda</h2>
+  <p>Begin your journey through the ancient science of life. Click a topic to start learning:</p>
+
+  <div class="lesson-grid">
+    <div class="lesson-card" onclick="loadLesson('doshas')">🌿 Tridosha</div>
+    <div class="lesson-card" onclick="loadLesson('rasa')">🍋 Rasa (Tastes)</div>
+    <div class="lesson-card" onclick="loadLesson('dhatus')">🧬 Dhatus</div>
+    <div class="lesson-card" onclick="loadLesson('ojas')">✨ Ojas</div>
+    <div class="lesson-card" onclick="loadLesson('agni')">🔥 Agni</div>
+    <div class="lesson-card" onclick="loadLesson('malas')">♻️ Malas</div>
+    <div class="lesson-card" onclick="loadLesson('mahabhutas')">🌀 Pancha Mahabhutas</div>
+  </div>
+
+  <div id="lessonContent" class="lesson-content"></div>
+  
+</section>
+<section id="tea-recommender" class="section">
+  <h2>☕ Ayurvedic Tea Recommender</h2>
+  <p>Select your concern and discover a soothing herbal blend.</p>
+
+  <form id="teaForm">
+    <label for="teaConcern">Choose a concern:</label><br>
+    <select id="teaConcern">
+      <option value="stress">Stress Relief</option>
+      <option value="sleep">Better Sleep</option>
+      <option value="digestion">Digestion</option>
+      <option value="immunity">Immunity Boost</option>
+      <option value="detox">Detoxification</option>
+      <option value="oversleep">Oversleep / Sluggishness</option>
+
+    </select><br><br>
+    <button type="button" onclick="recommendTea()">Get My Tea</button>
+  </form>
+
+  <div id="teaResult" class="tea-result"></div>
+</section>
+
+
+
+<section id="tips" class="section tip-section">
+  <h2>🌞 Daily Ayurvedic Tip</h2>
+  <p id="daily-tip">Loading...</p>
+</section>
+
+
+<footer>
+  <p>© 2025 Ayurveda Wellness. Contact: mayankchitra3@gmail.com</p>
+</footer>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
